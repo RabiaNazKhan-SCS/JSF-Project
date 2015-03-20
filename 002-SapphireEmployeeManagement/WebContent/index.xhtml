@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions" 
+	>
+	
+<h:head></h:head>
+
+<h:body>
+
+<p:layout fullPage="true">
+	
+	<p:layoutUnit position="north">
+
+		<h:panelGrid columns="2" style="float:left;">
+
+			<p:graphicImage value="resources/images/Logo_Sapphire.jpg" width="100px" height="100px"></p:graphicImage>
+
+			<h:outputLabel>Sapphire Consulting Services</h:outputLabel>
+
+		</h:panelGrid>
+
+		<h:panelGrid columns="1" style="float:right;" >
+			
+			<p:outputLabel></p:outputLabel>
+			<p:outputLabel></p:outputLabel>	
+			<p:outputLabel></p:outputLabel>						
+			<p:outputLabel></p:outputLabel>
+			<p:outputLabel></p:outputLabel>
+			
+		<h:panelGrid columns="5" style="float:right;" >
+					
+			<h:inputText id="email" value="#{indexManagedBean.loginemail}"></h:inputText>
+			
+			<p:watermark value="Enter Email" for="email"></p:watermark>
+			
+			<h:inputText id="password" value="#{indexManagedBean.loginpassword}"></h:inputText>
+			
+			<p:watermark value="Enter Password" for="password"></p:watermark>
+			
+			<p:commandButton value="Login" action="#{indexManagedBean.login}"></p:commandButton>
+			
+			<p:selectBooleanCheckbox itemLabel="Keep me login"></p:selectBooleanCheckbox>
+			
+			<p:column></p:column>
+			<h:link value="Forgot Password?"></h:link>
+			</h:panelGrid>
+		
+			</h:panelGrid>	
+	
+	</p:layoutUnit>
+	
+	<p:layoutUnit position="center">
+		<p:menubar>
+			<p:submenu label="Home"></p:submenu>
+			
+			<p:submenu label="About Company"></p:submenu>
+					
+			<p:submenu label="Clients"></p:submenu>
+				
+			<p:submenu label="porfolio"></p:submenu>
+				
+		</p:menubar>
+			
+	<p:panel header="Sign up" style="float:right;width:300px;height:300;" >
+			
+		<h:panelGrid columns="2">
+						
+			<h:panelGrid column="1" cellpadding="1">
+			
+				<h:form id="form1">
+				
+					<p:inputText id="fname" value="#{indexManagedBean.fullname}"></p:inputText>
+				
+					<p:calendar id="dob" value="#{indexManagedBean.dob}"  navigator="true" yearRange="c-100:c+100"/>
+
+					<p:inputMask  id="cnic" value="#{indexManagedBean.cnic}" mask="99999-9999999-9" ></p:inputMask>
+								
+					<p:inputMask  id="mnum" value="#{indexManagedBean.mobilenum}" mask="+92-999-9999999" >
+					
+					</p:inputMask>
+					
+					<p:commandButton id="sendsmscode" value="Send code"></p:commandButton>
+					
+					<p:inputText id="smscode" value="#{indexManagedBean.SMSCode}"></p:inputText>
+					
+					<p:inputText id="email2"  value="#{indexManagedBean.email}" required="true" requiredMessage="Please enter email" validatorMessage="Invalid email format">
+					
+						<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"></f:validateRegex>
+					
+					</p:inputText>
+					
+					<p:message  id="test" for="email2" ></p:message>
+					
+					<p:commandButton id="sendemailcode" value="Send code" action="#{indexManagedBean.sendEmailcode}" ></p:commandButton>
+					
+			
+					
+					<p:inputText id="emailcode" value="#{indexManagedBean.emailCode}">
+					
+						<f:ajax event="blur" listener="#{indexManagedBean.validateCodeViaEmail()}"  execute="emailcode" render=":form1"></f:ajax>
+						
+						<p:message  id="test2" for="emailcode" rendered="#{indexManagedBean.emailCodeIsValid eq false}" showDetail="true" display="icon">*Invalid code</p:message>
+					
+					</p:inputText>	
+					
+					
+					<h:inputSecret id="pw" value="#{indexManagedBean.password}" feedback="true"></h:inputSecret>
+
+					<h:inputSecret id="cpw" value="#{indexManagedBean.confirmpassword}">
+						
+					</h:inputSecret>
+
+					<p:fileUpload fileUploadListener="#{indexManagedBean.file}" mode="simple" required="true" label="Upload Photo" allowTypes="/images" requiredMessage="Upload your photo" />
+								
+					<p:commandButton value="Sign Up" action="#{indexManagedBean.signUp}" update="email2"></p:commandButton>
+
+							<p:watermark value="Enter Full Name" for="fname"></p:watermark>
+							
+							<p:watermark value="Enter CNIC" for="cnic"></p:watermark>
+						
+							<p:watermark value="Mobile Number" for="mnum"></p:watermark>
+						
+							<p:watermark value="Date of Birth" for="dob"></p:watermark>
+						
+							<p:watermark value="Enter Email" for="email2"></p:watermark>
+						
+							<p:watermark value="Enter Password" for="pw"></p:watermark>
+						
+							<p:watermark value="Confirm Password" for="cpw"></p:watermark>
+							
+							<p:watermark value="Enter email code" for="emailcode"></p:watermark>
+							
+							<p:watermark value="Enter SMS code" for="smscode"></p:watermark>
+				</h:form>	
+						
+			</h:panelGrid>	
+				
+		</h:panelGrid>
+		
+	</p:panel>	
+	
+		<p:panel header="Overview" style="float:left;width:820px;height:300; COLOR:#102E90;">
+			<h:outputText style="COLOR: #000000; FONT-FAMILY: 'Calibri'; FONT-SIZE: small;" value="Sapphire Consulting Services (Pvt.) Limited – SCS is an international systems consulting company providing a broad portfolio of technology and business solutions to help its worldwide clients improve their business performance.
+			SCS develops turnkey solutions with a faster time to market and a lower Total Cost of Ownership. The service ranges from building a business case, to assessing application portfolios to designing and implementing the final solution."/>
+		</p:panel>
+
+</p:layoutUnit>
+
+</p:layout>
+
+</h:body>
+
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="88,128,50,41" model-entity="JSFProcessGroup" persistent="true">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#SignupValidationPage.xhtml"
+    NAME="output1" PATH="/SignupValidationPage.xhtml"
+    TARGET="rules:#SignupValidationPage.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#SignupValidationPage.xhtml"
+  PATH="/SignupValidationPage.xhtml" SHAPE="328,224,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#SignupValidationPage.xhtml:0" NAME="item"
+   PATH="/SignupValidationPage.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#test2.xhtml" PATH="/test2.xhtml"
+  SHAPE="799,244,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#test2.xhtml:0" NAME="item"
+   PATH="/test2.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="test::#test.xhtml" NAME="output"
+    PATH="/test.xhtml" TARGET="rules:#test.xhtml" TITLE="test" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#test.xhtml" PATH="/test.xhtml"
+  SHAPE="624,208,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

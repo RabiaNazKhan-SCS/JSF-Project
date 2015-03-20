@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"     
+	>
+	
+<h:head></h:head>
+
+<h:body>
+	<p:graphicImage value="resources/img/sapphire-logo2.jpg"></p:graphicImage>
+		<p:panel header="Validation">
+				<h:panelGrid columns="2">
+	 			<h:outputText value="Enter the confirmation code received via email:" style="COLOR: #000000; FONT-FAMILY: 'Cambria'; FONT-SIZE: small;"/>
+	 			<p:inputText></p:inputText>
+	 			<h:outputText value="Enter the confirmation code received via sms:" style="COLOR: #000000; FONT-SIZE: small; FONT-FAMILY: 'Cambria';"/>
+	 			<p:inputText></p:inputText>
+	 			<p:column></p:column>
+	 				<h:panelGrid columns="3">
+	 					<p:commandButton value="Submit" icon="resources/img/sign_up.ico"></p:commandButton>
+	 					<p:commandButton value="Back" icon="resources/img/sign_up.ico" action="back"></p:commandButton>
+	 					
+	 				</h:panelGrid>
+	 				
+			 </h:panelGrid>
+			 
+		</p:panel>
+
+</h:body>
+</html>
